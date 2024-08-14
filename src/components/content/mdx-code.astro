@@ -1,0 +1,11 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  code: string;
+  lang: string;
+}
+const { code, lang, ...attrs } = Astro.props;
+---
+
+<div class={`my-6 `} {...attrs}></div>

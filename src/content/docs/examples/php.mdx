@@ -1,0 +1,34 @@
+---
+title: Example PHP
+description: Example PHP .
+---
+
+```php
+
+api = Radiator::Api.new
+
+options = []
+options << account_name
+options << -1 # start
+options << 1000 # limit
+
+# This is optional, we can mask out all operations other than comment_operation.
+operation_mask = 0x02 # comment_operation
+options << (operation_mask & 0xFFFFFFFF) # operation_filter_low
+options << ((operation_mask & 0xFFFFFFFF00000000) >> 32) # operation_filter_high
+
+api.get_account_history(*options) do |history|
+  history.each do |index, item|
+    type, op = item.op
+
+    next unless type == 'comment'
+    next if op.parent_author.empty? # skip posts
+    next if op.parent_author == account_name # skip replies to account
+
+    # .
+    # ... your code here
+    # .
+  end
+end
+
+```

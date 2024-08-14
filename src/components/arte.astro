@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import beats from "@/images/beats1.png"
+import Goddesses from "@/images/goddesses.png"
+import Gods from "@/images/god.png"
+import Gods2 from "@/images/god2.png"
+
+
+type item = {
+    src: ImageMetadata;
+    alt: string;
+    tag?: string;
+};
+
+// Define la estructura de tus imágenes
+const images : item[] =  [
+  {
+    src: Gods,
+    alt: "Photo by Minh Pham",
+    tag: "Gods - Aesir"
+  },
+  {
+    src: Gods2,
+    alt: "Photo by Lorenzo Herrera",
+    tag: "Gods - Juton"
+  },
+  {
+    src: Goddesses,
+    alt: "Photo by Magicle",
+    tag: "Goddesses - Juton"
+  },
+  {
+    src: beats,
+    alt: "Photo by Magicle",
+    tag: "Beats"
+  },
+  // ... más imágenes si es necesario
+];
+
+
+---
+
+<div class="container"> 
+    <div class=" flex justify-center   ">
+      <div class=" text-center max-w-[80%]  ">
+        <h1 class="text-5xl md:text-6xl font-bold font-cinzel">Game Art</h1>
+        <p class="py-2 leading-normal text-muted-foreground sm:text-lg sm:leading-7 balance-text">
+          
+     
+          The art is inspired by Norse mythology, recreating the most important characters. Fantastic, mythological and elemental aesthetics.</p>
+
+          </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-8 xl:gap-8 pt-18 justify-self-center ">
+        {images.map((item) => (
+        <div class="group relative flex h-56 items-end justify-end overflow-hidden rounded-lg  shadow-lg md:h-96">
+            <div class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110">
+            <Image src={item.src} alt={item.alt} />
+            </div>
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+            <span class="relative mr-3 mb-3 inline-block rounded-lg border border-gray-500 px-2 py-1 text-xs text-gray-200 backdrop-blur md:px-3 md:text-sm">{item.tag}</span>
+        </div>
+        ))}
+    </div>
+  
+</div>

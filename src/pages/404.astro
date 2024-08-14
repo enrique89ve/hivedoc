@@ -1,0 +1,29 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import MainLayout from "@/layouts/main-layout.astro";
+import { cn } from "@/lib/utils";
+import Icon from "astro-icon";
+import Arte from "@/components/arte.astro";
+import Section from "@/components/section/section.astro";
+
+
+
+---
+
+<MainLayout title="Error 404">
+
+  <div class="min-h-screen flex flex-grow items-center justify-center ">
+    <div class="rounded-lg  p-8 text-center shadow-xl">
+      <h1 class="mb-4 font-sans text-7xl font-bold text-red-600">404</h1>
+      <p class="text-gray-200">Oops! The page you are looking for could not be found.</p>
+      <a href="/" class="mt-4 bg-yellow-800 inline-block rounded  px-4 py-2 font-semibold text-white "> Go back to Home </a>
+    </div>
+  </div>
+
+
+
+
+</MainLayout>
+
+

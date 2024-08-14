@@ -1,0 +1,125 @@
+---
+import Hive from "@/icons/hiveVertical.astro";
+import ArrowHive from "@/icons/arrowhive.astro";
+
+type Feature = {
+  title: string;
+  description: string;
+  link: string;
+};
+
+const features: Feature[] = [
+  {
+    title: "Use Hive Dapps",
+    description:
+      "Hive boasts an ecosystem with over 100 Dapps, including games, social media, and financial services.",
+    link: "https://hive.io/eco",
+  },
+  {
+    title: "Claim your Username",
+    description:
+      "Your username will be your wallet address and your social media handle at the same time.",
+    link: "https://join.holahive.com/?ticket=hiveghana",
+  },
+  {
+    title: "Build on Hive",
+    description:
+      "Hive simplifies development of robust blockchain-based apps. It is a blockchain for Web3 developers.",
+    link: "https://developers.hive.io/",
+  },
+];
+---
+
+<section
+  class="mt-32 py-10 px-8 pt-28 pb-20 md:py-24 md:px-24 border-2 border-bg-gray-900 bg-hive-black rounded-md"
+>
+  <div>
+    <h2
+      class="text-center text-5xl md:text-6xl font-extrabold mb-10 md:mb-20 text-hive-gris"
+    >
+      About Hive
+    </h2>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-20 justify-center items-center justify-items-center"
+    >
+      <article class="text-center md:text-left">
+        <div class="p-auto md:pr-8">
+          <h3 class="text-2xl font-bold mb-4 text-hive-main">What is Hive?</h3>
+          <p class="text-lg md:text-xl text-gray-200">
+            Hive is an innovative and forward-looking decentralized blockchain
+            and ecosystem, designed to scale with widespread adoption of the
+            currency and platforms in mind. By combining lightning-fast
+            processing times and fee-less transactions, Hive is positioned to
+            become one of the leading Web3 blockchains used by people around the
+            world.
+          </p>
+          <a
+            href="http://hive.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-astro-prefetch
+          >
+            <button
+              class="mt-6 px-5 border border-hive-gris text-white font-medium py-2 rounded-md text-base hover:bg-hive-gris hover:text-hive-black inline-flex items-center justify-center hover:scale-105 duration-300"
+            >
+              Official website
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-5 w-5"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </article>
+      <article class="w-full flex justify-center items-center mt-6 md:mt-0">
+        <a href="http://hive.io" target="_blank" rel="noopener noreferrer">
+          <div class="hover:animate-pulsing">
+            <Hive class="m-2 w-[250px] h-auto text-hive-gris" />
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="py-2 md:py-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {
+            features.map((feature) => (
+              <a
+                href={feature.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="h-full hover:scale-105 duration-300"
+              >
+                <div class="flex flex-col justify-between h-full rounded-lg hover:bg-gray-900 p-4 text-white border border-b-gray-200">
+                  <div>
+                    <h2 class="text-xl font-semibold text-gray-100">
+                      {feature.title}
+                    </h2>
+                    <p class="mt-2 text-sm text-gray-300">
+                      {feature.description}
+                    </p>
+                  </div>
+                  <div class="flex justify-end">
+                    <ArrowHive />
+                  </div>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

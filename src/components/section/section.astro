@@ -1,0 +1,108 @@
+---
+import Icon from "astro-icon";
+
+type sectionConfig = {
+  title: string;
+  description: string;
+  seSimbol?: string;
+
+};
+
+
+type sectionDetails= {
+  icon?: string;
+  title: string;
+  description: string;
+  link?: string;
+
+
+}[];
+
+
+const sectionConfig: sectionConfig = {
+  title: "About Ragnarok NFT game",
+  description:
+    "Ragnarok is a NFT strategy game where gods and titans fight in strategic 1v1 duels on a chess board, seeking to be the last one standing.",
+ 
+
+};
+
+
+
+const sectionDetails : sectionDetails = [
+  {
+    icon: "os",
+    title: "Open Source",
+    description: "The game is developed in Unity and is open source."
+
+  },
+  {
+    icon: "hive",
+    title: "Developed on Hive",
+    description: "We use the Hive blockchain as a base layer for user integration and tokenization."
+
+  },
+  {
+    icon: "art",
+    title: "Inspired by Norse mythology",
+    description: "We were inspired by Nordic mythology to create the artwork and many components of the game."
+
+  },
+
+
+
+]
+
+
+
+
+---
+
+
+<section
+id="features"
+class="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
+>
+<div
+  class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center"
+>
+  <h3 class=" font-cinzel font-bold text-3xl leading-[1.1]  md:text-6xl">
+
+    {sectionConfig.title}
+    
+  </h3>
+  <p
+    class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 balance-text"
+  >
+    {sectionConfig.description}
+  </p>
+</div>
+<div
+  class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3"
+> 
+{sectionDetails.map((feature, index) => (
+
+  <div class="relative overflow-hidden rounded-lg border bg-background p-2">
+    <div class="flex h-md flex-col justify-between rounded-md p-5">
+
+      <div class="text-5xl pb-12">
+       
+
+        <Icon name={feature.icon} class="mt-2 size-18" ></Icon>
+      </div>
+      <div class="space-y-4">
+        <h3 class="font-bold text-2xl font-cinzel">  {feature.title}</h3>
+        <p class="text-sm text-muted-foreground">
+          {feature.description}
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  ))}
+</div>
+<div class="mx-auto text-center md:max-w-[58rem]">
+
+</div>
+</section>

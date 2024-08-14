@@ -1,0 +1,53 @@
+{
+  "name": "hive-docs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.3",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.7.2",
+    "@fontsource-variable/cinzel": "^5.0.8",
+    "@fontsource/lato": "^5.0.18",
+    "@fontsource/twinkle-star": "^5.0.18",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
+    "@radix-ui/react-scroll-area": "^1.0.5",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^4.13.3",
+    "astro-expressive-code": "^0.35.6",
+    "astro-icon": "^0.8.2",
+    "balance-text": "^3.3.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "date-fns": "^3.0.1",
+    "framer-motion": "^10.16.16",
+    "lucide-react": "^0.299.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.1.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.17",
+    "mdast-util-toc": "^7.0.0",
+    "postcss": "^8.4.33",
+    "remark": "^15.0.1",
+    "tailwindcss": "^3.4.1",
+    "unist-util-visit": "^5.0.0"
+  }
+}

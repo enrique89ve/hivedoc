@@ -1,0 +1,71 @@
+---
+import { siteConfig } from "@/config/site";
+import IcoHive from "@/icons/hive.astro";
+import Icon from "astro-icon";
+import { Image } from "astro:assets";
+import LogoHorizontal from "../../images/logom.png";
+---
+
+<footer class="mt-auto mb-10">
+  <div class="mx-auto max-w-screen-xl text-center">
+    <a href="#" class="flex justify-center items-center">
+      <Image
+        src={LogoHorizontal}
+        alt="hive-docs"
+        class="w-[25%] md:w-[15%] mx-2"
+      />
+    </a>
+    <p class="my-6 text-gray-500 dark:text-gray-400"></p>
+    <ul
+      class="flex flex-wrap justify-center items-center mb-6 text-lg text-white"
+    >
+      <li>
+        <a
+          href="https://github.com/shadcn-ui/taxonomy"
+          target="_blank"
+          rel="noreferrer"
+          class="font-medium underline underline-offset-4"
+        >
+        </a>
+        <li>
+          <a
+            href={siteConfig.links.github}
+            target="_blank"
+            rel="noreferrer"
+            class="font-medium mr-4 hover:underline md:mr-6"
+          >
+            <Icon name="github" class="mt-2 size-8" /></a
+          >
+        </li>
+      </li>
+
+      <li>
+        <a
+          href={siteConfig.links.hive}
+          target="_blank"
+          rel="noreferrer"
+          class="mr-4 hover:underline md:mr-6"
+        >
+          <p class="mt-2 px-4 text-sm text-white">
+            <IcoHive />
+          </p>
+        </a>
+      </li>
+      <li>
+        <a
+          href={siteConfig.links.twitter}
+          target="_blank"
+          rel="noreferrer"
+          class="mr-4 hover:underline md:mr-6"
+        >
+          <Icon name="twitter" class="mt-2 size-8" />
+        </a>
+      </li>
+    </ul>
+
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+      >© 2023-2024<a href="#" class="hover:underline"> {siteConfig.name}</a>.
+      All Rights Reserved.</span
+    >
+  </div>
+</footer>

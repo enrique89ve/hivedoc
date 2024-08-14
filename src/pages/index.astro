@@ -1,0 +1,22 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import MainLayout from "@/layouts/main-layout.astro";
+import { cn } from "@/lib/utils";
+import Icon from "astro-icon";
+
+import Section from "@/components/section/section.astro";
+import Hero from "@/components/section/hero.astro";
+import HiveAbout from "@/components/section/HiveAbout.astro";
+---
+
+<MainLayout title="Hive Developer Portal">
+  <Hero />
+
+  <div class="mt-36 px-12 flex justify-center">
+    <Section />
+  </div>
+  <div class="mt-36 max-w-[1080px] mx-auto">
+    <HiveAbout />
+  </div>
+</MainLayout>
